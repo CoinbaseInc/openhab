@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2013, openHAB.org and others.
+ * Copyright (c) 2010-2016 by the respective copyright holders.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,8 +8,8 @@
  */
 package org.openhab.binding.enocean;
 
-import org.enocean.java.address.EnoceanParameterAddress;
-import org.enocean.java.eep.EEPId;
+import org.opencean.core.address.EnoceanParameterAddress;
+import org.opencean.core.common.EEPId;
 import org.openhab.binding.enocean.internal.profiles.Profile;
 import org.openhab.core.binding.BindingProvider;
 import org.openhab.core.items.Item;
@@ -40,7 +40,7 @@ public interface EnoceanBindingProvider extends BindingProvider {
 
     /**
      * Returns the configured profile (if set).
-     * 
+     *
      * @param itemName
      *            The name of the item
      * @return The profile configured in the item line, NULL if not set.

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2013, openHAB.org and others.
+ * Copyright (c) 2010-2016 by the respective copyright holders.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,10 +8,10 @@
  */
 package org.openhab.binding.enocean.internal.profiles;
 
-import org.enocean.java.common.ParameterAddress;
-import org.enocean.java.common.values.ButtonState;
-import org.enocean.java.common.values.Value;
-import org.enocean.java.eep.RockerSwitch;
+import org.opencean.core.common.Parameter;
+import org.opencean.core.common.ParameterAddress;
+import org.opencean.core.common.values.ButtonState;
+import org.opencean.core.common.values.Value;
 import org.openhab.core.events.EventPublisher;
 import org.openhab.core.items.Item;
 import org.openhab.core.library.types.IncreaseDecreaseType;
@@ -21,10 +21,10 @@ import org.slf4j.LoggerFactory;
 /**
  * Bridge class to transform normal button behavior to a Dimmer "profile". A
  * RockerSwitch can control with this profile a light dimmer.
- * 
+ *
  * @author Thomas Letsch (contact@thomas-letsch.de)
  * @since 1.3.0
- * 
+ *
  */
 public class DimmerProfile extends BasicProfile {
 
@@ -44,21 +44,21 @@ public class DimmerProfile extends BasicProfile {
         ButtonState buttonState = (ButtonState) valueObject;
         if (buttonUpPressed(parameterAddress)) {
             switch (buttonState) {
-            case PRESSED:
-                startDimmerThread(IncreaseDecreaseType.INCREASE);
-                break;
-            case RELEASED:
-                stopDimmerThread();
-                break;
+                case PRESSED:
+                    startDimmerThread(IncreaseDecreaseType.INCREASE);
+                    break;
+                case RELEASED:
+                    stopDimmerThread();
+                    break;
             }
         } else if (buttonDownPressed(parameterAddress)) {
             switch (buttonState) {
-            case PRESSED:
-                startDimmerThread(IncreaseDecreaseType.DECREASE);
-                break;
-            case RELEASED:
-                stopDimmerThread();
-                break;
+                case PRESSED:
+                    startDimmerThread(IncreaseDecreaseType.DECREASE);
+                    break;
+                case RELEASED:
+                    stopDimmerThread();
+                    break;
             }
         }
     }
@@ -73,11 +73,11 @@ public class DimmerProfile extends BasicProfile {
     }
 
     private boolean buttonDownPressed(ParameterAddress parameterAddress) {
-        return RockerSwitch.BUTTON_I.equals(parameterAddress.getParameterId());
+        return Parameter.I.name().equals(parameterAddress.getParameterId());
     }
 
     private boolean buttonUpPressed(ParameterAddress parameterAddress) {
-        return RockerSwitch.BUTTON_O.equals(parameterAddress.getParameterId());
+        return Parameter.O.name().equals(parameterAddress.getParameterId());
     }
 
     private class DimmerThread extends Thread {

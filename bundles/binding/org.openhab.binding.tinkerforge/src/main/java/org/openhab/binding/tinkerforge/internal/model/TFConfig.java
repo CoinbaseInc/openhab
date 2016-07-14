@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2013, openHAB.org and others.
+ * Copyright (c) 2010-2016 by the respective copyright holders.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -13,14 +13,16 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>TF Config</b></em>'.
- * <!-- end-user-doc -->
+ *
+ * @author Theo Weiss
+ * @since 1.3.0
+ *        <!-- end-user-doc -->
  *
  *
  * @see org.openhab.binding.tinkerforge.internal.model.ModelPackage#getTFConfig()
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface TFConfig extends EObject
-{
+public interface TFConfig extends EObject {
 
 } // TFConfig

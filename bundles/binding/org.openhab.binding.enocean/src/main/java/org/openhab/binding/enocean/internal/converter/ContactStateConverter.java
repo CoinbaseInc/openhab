@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2013, openHAB.org and others.
+ * Copyright (c) 2010-2016 by the respective copyright holders.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,15 +8,15 @@
  */
 package org.openhab.binding.enocean.internal.converter;
 
-import org.enocean.java.common.values.ContactState;
+import org.opencean.core.common.values.ContactState;
 import org.openhab.core.library.types.OpenClosedType;
 
 /**
  * Converts a ContactState to an OH OpenClosedType.
- * 
+ *
  * @author Thomas Letsch (contact@thomas-letsch.de)
  * @since 1.3.0
- * 
+ *
  */
 public class ContactStateConverter extends StateConverter<ContactState, OpenClosedType> {
 

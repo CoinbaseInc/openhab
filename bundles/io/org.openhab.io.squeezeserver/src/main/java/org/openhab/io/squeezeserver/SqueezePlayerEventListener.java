@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2013, openHAB.org and others.
+ * Copyright (c) 2010-2016 by the respective copyright holders.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,7 +8,6 @@
  */
 package org.openhab.io.squeezeserver;
 
-import org.openhab.io.squeezeserver.SqueezePlayer.Mode;
 import org.openhab.io.squeezeserver.SqueezePlayer.PlayerEvent;
 
 /**
@@ -17,18 +16,38 @@ import org.openhab.io.squeezeserver.SqueezePlayer.PlayerEvent;
  * @since 1.3.0
  */
 public interface SqueezePlayerEventListener {
-	
-	 void powerChangeEvent(PlayerEvent event, String playerId, boolean isPowered);
-	 void modeChangeEvent(PlayerEvent event, String playerId, Mode mode);
-	 void volumeChangeEvent(PlayerEvent event, String playerId, int volume);
-	 void muteChangeEvent(PlayerEvent event, String playerId, boolean isMuted);
 
-	 void titleChangeEvent(PlayerEvent event, String playerId, String title);
-	 void albumChangeEvent(PlayerEvent event, String playerId, String album);	 
-	 void artistChangeEvent(PlayerEvent event, String playerId, String artist);	 
-	 void artChangeEvent(PlayerEvent event, String playerId, String art);		 
-	 void yearChangeEvent(PlayerEvent event, String playerId, String year);
-	 void genreChangeEvent(PlayerEvent event, String playerId, String genre);
-	 void remoteTitleChangeEvent(PlayerEvent event, String playerId, String title);
-     
+    void powerChangeEvent(PlayerEvent event);
+
+    void modeChangeEvent(PlayerEvent event);
+
+    void volumeChangeEvent(PlayerEvent event);
+
+    void muteChangeEvent(PlayerEvent event);
+
+    void currentPlaylistIndexEvent(PlayerEvent event);
+
+    void currentPlayingTimeEvent(PlayerEvent event);
+
+    void numberPlaylistTracksEvent(PlayerEvent event);
+
+    void currentPlaylistShuffleEvent(PlayerEvent event);
+
+    void currentPlaylistRepeatEvent(PlayerEvent event);
+
+    void titleChangeEvent(PlayerEvent event);
+
+    void albumChangeEvent(PlayerEvent event);
+
+    void artistChangeEvent(PlayerEvent event);
+
+    void coverArtChangeEvent(PlayerEvent event);
+
+    void yearChangeEvent(PlayerEvent event);
+
+    void genreChangeEvent(PlayerEvent event);
+
+    void remoteTitleChangeEvent(PlayerEvent event);
+
+    void irCodeChangeEvent(PlayerEvent event);
 }

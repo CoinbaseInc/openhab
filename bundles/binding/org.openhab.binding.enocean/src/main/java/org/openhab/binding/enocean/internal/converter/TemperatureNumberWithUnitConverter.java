@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2013, openHAB.org and others.
+ * Copyright (c) 2010-2016 by the respective copyright holders.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,16 +10,16 @@ package org.openhab.binding.enocean.internal.converter;
 
 import java.math.BigDecimal;
 
-import org.enocean.java.common.values.NumberWithUnit;
-import org.enocean.java.common.values.Unit;
+import org.opencean.core.common.values.NumberWithUnit;
+import org.opencean.core.common.values.Unit;
 import org.openhab.core.library.types.DecimalType;
 
 /**
  * A converter to convert a NumberWithUnit type to a DecimalNumber
- * 
+ *
  * @author Thomas Letsch (contact@thomas-letsch.de)
  * @since 1.3.0
- * 
+ *
  */
 public class TemperatureNumberWithUnitConverter extends StateConverter<NumberWithUnit, DecimalType> {
 
